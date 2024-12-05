@@ -34,7 +34,7 @@ export const Checkout = () => {
     const updatedFormData = { ...formData, total: getTotalCartAmount(), cartItems: cartData };
     console.log(updatedFormData);
 
-    await fetch('http://localhost:7000/orderprod', {
+    await fetch('https://fyp-backend-order.onrender.com/orderprod', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

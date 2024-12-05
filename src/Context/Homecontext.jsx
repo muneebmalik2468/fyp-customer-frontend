@@ -26,7 +26,7 @@ const HomecontextProvider = (props) => {
   // Fetch products and set them to state if not already in localStorage
   useEffect(() => {
     if (all_product.length === 0) {
-      fetch('http://localhost:8000/allproducts')
+      fetch('https://fyp-backend-product.onrender.com/allproducts')
         .then((response) => response.json())
         .then((data) => {
           setAll_Product(data);  // Set products in state
@@ -39,7 +39,7 @@ const HomecontextProvider = (props) => {
   // Fetch and update cart data
   useEffect(() => {
     if (all_product.length > 0 && localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/getcart', {
+      fetch('https://fyp-backend-user.onrender.com/getcart', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -95,7 +95,7 @@ const HomecontextProvider = (props) => {
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems)); // Persist cartItems
 
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/addtocart', {
+      fetch('https://fyp-backend-user.onrender.com/addtocart', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -116,7 +116,7 @@ const HomecontextProvider = (props) => {
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems)); // Persist cartItems
 
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/removecart', {
+      fetch('https://fyp-backend-user.onrender.com/removecart', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

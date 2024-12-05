@@ -15,7 +15,7 @@ export const Signup = () => {
   const usersignup = async ()=>{
     console.log(formData);
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://fyp-backend-user.onrender.com/signup',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
